@@ -1,0 +1,14 @@
+{
+  "name": "cblocks",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ talhaakkaya/blockrare"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.23.1",
+    "@graphprotocol/graph-ts": "0.23.1",
+    "as-base64": "^0.2.0"
+  }
+}

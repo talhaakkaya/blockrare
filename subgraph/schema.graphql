@@ -1,0 +1,14 @@
+type Token @entity {
+  id: ID!
+  blockNumber: BigInt!
+  metadata: String!
+  owner: Bytes!
+  blockName: String!
+  blockData: Bytes!
+  oneOfInBlock: BigInt!
+  isImmutable: Boolean!
+  approxMintCost: BigInt!
+  mintedAt: BigInt!
+  updatedAt: BigInt!
+  isOriginal: Boolean!
+}

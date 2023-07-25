@@ -1,0 +1,47 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: fuji
+    source:
+      address: "0x9Fe9451DA86a3b1FF954435bbDda8DF2C52E69b6"
+      abi: Contract
+      startBlock: 24485950
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - BlacklistUpdated
+        - FeeUpdated
+        - OwnershipTransferred
+        - StatusUpdated
+        - TokenURIUpdated
+        - Transfer
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: BlacklistUpdated(indexed address,indexed bool)
+          handler: handleBlacklistUpdated
+        - event: FeeUpdated(indexed uint256)
+          handler: handleFeeUpdated
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: StatusUpdated(indexed uint256,indexed uint256)
+          handler: handleStatusUpdated
+        - event: TokenURIUpdated(indexed uint256,indexed string)
+          handler: handleTokenURIUpdated
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: MetadataUpdated(indexed address)
+          handler: handleMetadataUpdated
+      file: ./src/mapping.ts
