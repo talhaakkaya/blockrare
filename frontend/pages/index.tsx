@@ -107,7 +107,7 @@ const Index: NextPage = () => {
             The <Badge bg="danger">{blockNumber}</Badge> block is{" "}
             <a
               className="text-truncate w-100"
-              href={`https://snowtrace.io/block/${blockNumber}`}
+              href={`https://testnet.snowtrace.io/block/${blockNumber}`}
               target="_blank"
               rel="noreferrer"
             >
@@ -135,7 +135,7 @@ const Index: NextPage = () => {
                   className="d-block text-truncate"
                   target="_blank"
                   rel="noreferrer"
-                  href={`https://snowtrace.io/tx/${
+                  href={`https://testnet.snowtrace.io/tx/${
                     err.transaction ? err.transaction.hash : ""
                   }`}
                 >
